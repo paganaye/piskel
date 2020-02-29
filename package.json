@@ -30,7 +30,8 @@
     "release": "grunt && node ./bin/copy-to-piskel-website",
     "build": "grunt desktop",
     "build:mac": "grunt desktop-mac",
-    "format": "grunt eslint --fix"
+    "format": "grunt eslint --fix",
+    "copy:friends": "grunt copy:friends"
   },
   "devDependencies": {
     "dateformat": "2.0.0",

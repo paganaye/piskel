@@ -1,5 +1,17 @@
-Piskel
-======
+Piskel butchered by Pascal
+==========================
+
+modify and debug
+  npm run dev
+test build
+  npm run build
+  cd C:\Users\Pascal\code\friends\piskel-src
+  reload
+  http://localhost:8080/dest/prod/index.html
+copy back to friends
+  "start": "grunt build && nw",
+  
+==========================
 
 [![Travis Status](https://api.travis-ci.org/piskelapp/piskel.png?branch=master)](https://travis-ci.org/piskelapp/piskel) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](https://gruntjs.com/)
 
