@@ -2,14 +2,17 @@ Piskel butchered by Pascal
 ==========================
 
 modify and debug
-  npm run dev
+
+    npm run dev
 test build
-  npm run build
-  cd C:\Users\Pascal\code\friends\piskel-src
-  reload
-  http://localhost:8080/dest/prod/index.html
+
+    npm run build
+    cd C:\Users\Pascal\code\friends\piskel-src
+    reload
+    http://localhost:8080/dest/prod/index.html
 copy back to friends
-  "start": "grunt build && nw",
+
+    "start": "grunt build && nw",
   
 ==========================
 
