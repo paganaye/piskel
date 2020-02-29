@@ -1,7 +1,7 @@
 <script type="text/template" id="templates/dialogs/import.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Import and Merge
+      Import image
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-content import-wizard-container"></div>
@@ -20,25 +20,29 @@
     <div class="import-section">
       <label class="dialog-section-radio-label">
         <input class="dialog-section-radio" name="import-type" value="single" type="radio" checked="checked">
-        Import as single image
+        Replace image
       </label>
     </div>
-    <div class="import-section import-subsection">
+    <!-- <div class="import-section import-subsection">
       <span class="dialog-section-title">Resize to</span>
       <input type="text" class="textfield import-size-field" autocomplete="off" name="resize-width"/>x
       <input type="text" class="textfield import-size-field" autocomplete="off" name="resize-height"/>
-    </div>
+    </div>-->
     <div class="import-section import-subsection">
       <span class="import-section-title">Smooth resize</span>
       <input type="checkbox" class="checkbox-fix" checked="checked" name="smooth-resize-checkbox" value="1"/>
-    </div>
+    </div> 
     <div class="import-section">
       <label class="dialog-section-radio-label">
         <input class="dialog-section-radio" name="import-type" value="sheet" type="radio">
-        Import as spritesheet
+        Add a new frame
       </label>
     </div>
     <div class="import-section import-subsection">
+      <span class="import-section-title">Slice image if it is too big</span>
+      <input type="checkbox" class="checkbox-fix" checked="checked" name="slice-image-checkbox" value="1"/>
+    </div> 
+    <!-- <div class="import-section import-subsection">
       <span class="dialog-section-title">Frame size</span>
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-size-x"/>x
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-size-y"/>
@@ -47,7 +51,7 @@
       <span class="dialog-section-title">Offset</span>
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-offset-x"/>x
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-offset-y"/>
-    </div>
+    </div> -->
   </form>
   <div class="import-step-buttons">
     <button class="import-back-button button">back</button>

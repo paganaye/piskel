@@ -111,7 +111,7 @@
   "js/controller/drawing/DragHandler.js",
   "js/controller/FramesListController.js",
   "js/controller/HeaderController.js",
-  "js/controller/LayersListController.js",
+//  "js/controller/LayersListController.js",
   "js/controller/preview/PopupPreviewController.js",
   "js/controller/preview/PreviewActionsController.js",
   "js/controller/preview/PreviewController.js",

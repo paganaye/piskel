@@ -22,24 +22,26 @@
     this.singleImportType = this.container.querySelector('[name=import-type][value=single]');
     this.sheetImportType = this.container.querySelector('[name=import-type][value=sheet]');
 
-    this.resizeWidth = this.container.querySelector('[name=resize-width]');
-    this.resizeHeight = this.container.querySelector('[name=resize-height]');
+    // this.resizeWidth = this.container.querySelector('[name=resize-width]');
+    // this.resizeHeight = this.container.querySelector('[name=resize-height]');
     this.smoothResize =  this.container.querySelector('[name=smooth-resize-checkbox]');
 
-    this.frameSizeX = this.container.querySelector('[name=frame-size-x]');
-    this.frameSizeY = this.container.querySelector('[name=frame-size-y]');
-    this.frameOffsetX = this.container.querySelector('[name=frame-offset-x]');
-    this.frameOffsetY = this.container.querySelector('[name=frame-offset-y]');
+    this.sliceImage =  this.container.querySelector('[name=slice-image-checkbox]');
+
+    // this.frameSizeX = this.container.querySelector('[name=frame-size-x]');
+    // this.frameSizeY = this.container.querySelector('[name=frame-size-y]');
+    // this.frameOffsetX = this.container.querySelector('[name=frame-offset-x]');
+    // this.frameOffsetY = this.container.querySelector('[name=frame-offset-y]');
 
     this.addEventListener(this.singleImportType, 'change', this.onImportTypeChange_);
     this.addEventListener(this.sheetImportType, 'change', this.onImportTypeChange_);
 
-    this.addEventListener(this.resizeWidth, 'keyup', this.onResizeInputKeyUp_);
-    this.addEventListener(this.resizeHeight, 'keyup', this.onResizeInputKeyUp_);
-    this.addEventListener(this.frameSizeX, 'keyup', this.onFrameInputKeyUp_);
-    this.addEventListener(this.frameSizeY, 'keyup', this.onFrameInputKeyUp_);
-    this.addEventListener(this.frameOffsetX, 'keyup', this.onFrameInputKeyUp_);
-    this.addEventListener(this.frameOffsetY, 'keyup', this.onFrameInputKeyUp_);
+    // this.addEventListener(this.resizeWidth, 'keyup', this.onResizeInputKeyUp_);
+    // this.addEventListener(this.resizeHeight, 'keyup', this.onResizeInputKeyUp_);
+    // this.addEventListener(this.frameSizeX, 'keyup', this.onFrameInputKeyUp_);
+    // this.addEventListener(this.frameSizeY, 'keyup', this.onFrameInputKeyUp_);
+    // this.addEventListener(this.frameOffsetX, 'keyup', this.onFrameInputKeyUp_);
+    // this.addEventListener(this.frameOffsetY, 'keyup', this.onFrameInputKeyUp_);
 
     pskl.utils.FileUtils.readImageFile(this.file_, this.onImageLoaded_.bind(this));
 
@@ -73,12 +75,12 @@
       this.importedImage_,
       {
         importType: this.getImportType_(),
-        frameSizeX: this.getImportType_() === 'single' ?
-            this.resizeWidth.value : this.sanitizeInputValue_(this.frameSizeX, 1),
-        frameSizeY: this.getImportType_() === 'single' ?
-            this.resizeHeight.value : this.sanitizeInputValue_(this.frameSizeY, 1),
-        frameOffsetX: this.sanitizeInputValue_(this.frameOffsetX, 0),
-        frameOffsetY: this.sanitizeInputValue_(this.frameOffsetY, 0),
+        // frameSizeX: this.getImportType_() === 'single' ?
+        //     this.resizeWidth.value : this.sanitizeInputValue_(this.frameSizeX, 1),
+        // frameSizeY: this.getImportType_() === 'single' ?
+        //     this.resizeHeight.value : this.sanitizeInputValue_(this.frameSizeY, 1),
+        // frameOffsetX: this.sanitizeInputValue_(this.frameOffsetX, 0),
+        // frameOffsetY: this.sanitizeInputValue_(this.frameOffsetY, 0),
         smoothing: !!this.smoothResize.checked,
         name: name
       },
@@ -93,10 +95,10 @@
       this.hideFrameGrid_();
     } else {
       // Using spritesheet import, so draw the frame grid in the preview
-      var x = this.sanitizeInputValue_(this.frameOffsetX, 0);
-      var y = this.sanitizeInputValue_(this.frameOffsetY, 0);
-      var w = this.sanitizeInputValue_(this.frameSizeX, 1);
-      var h = this.sanitizeInputValue_(this.frameSizeY, 1);
+      var x = 0; //this.sanitizeInputValue_(this.frameOffsetX, 0);
+      var y = 0; //this.sanitizeInputValue_(this.frameOffsetY, 0);
+      var w = 1; //this.sanitizeInputValue_(this.frameSizeX, 1);
+      var h = 1; //this.sanitizeInputValue_(this.frameSizeY, 1);
       this.drawFrameGrid_(x, y, w, h);
     }
   };
@@ -125,11 +127,11 @@
     // Select single image import type since the user changed a value here
     this.singleImportType.checked = true;
 
-    if (from === 'resize-width') {
-      this.resizeHeight.value = Math.round(value * height / width);
-    } else {
-      this.resizeWidth.value = Math.round(value * width / height);
-    }
+    // if (from === 'resize-width') {
+    //   this.resizeHeight.value = Math.round(value * height / width);
+    // } else {
+    //   this.resizeWidth.value = Math.round(value * width / height);
+    // }
   };
 
   ns.ImageImport.prototype.synchronizeFrameFields_ = function (value) {
@@ -141,8 +143,8 @@
     // Parse the frame input values
     var frameSizeX = this.sanitizeInputValue_(this.frameSizeX, 1);
     var frameSizeY = this.sanitizeInputValue_(this.frameSizeY, 1);
-    var frameOffsetX = this.sanitizeInputValue_(this.frameOffsetX, 0);
-    var frameOffsetY = this.sanitizeInputValue_(this.frameOffsetY, 0);
+    var frameOffsetX = 0; //this.sanitizeInputValue_(this.frameOffsetX, 0);
+    var frameOffsetY = 0; //this.sanitizeInputValue_(this.frameOffsetY, 0);
 
     // Select spritesheet import type since the user changed a value here
     this.sheetImportType.checked = true;
@@ -184,13 +186,13 @@
     this.fileNameContainer.textContent = fileName;
     this.fileNameContainer.setAttribute('title', fileName);
 
-    this.resizeWidth.value = w;
-    this.resizeHeight.value = h;
+    // this.resizeWidth.value = w;
+    // this.resizeHeight.value = h;
 
     this.frameSizeX.value = w;
     this.frameSizeY.value = h;
-    this.frameOffsetX.value = 0;
-    this.frameOffsetY.value = 0;
+    // this.frameOffsetX.value = 0;
+    // this.frameOffsetY.value = 0;
 
     this.importPreview.innerHTML = '';
     this.importPreview.appendChild(this.createImagePreview_());

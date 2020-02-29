@@ -27,7 +27,7 @@
   "css/dialogs-unsupported-browser.css",
   "css/notifications.css",
   "css/toolbox.css",
-  "css/toolbox-layers-list.css",
+//  "css/toolbox-layers-list.css",
   "css/toolbox-palettes-list.css",
   "css/toolbox-animated-preview.css",
   "css/transformations.css",

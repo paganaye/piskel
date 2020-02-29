@@ -2,11 +2,11 @@
   var ns = $.namespace('pskl.controller.settings');
 
   var PARTIALS = {
-    DESKTOP : 'save-desktop-partial',
+//    DESKTOP : 'save-desktop-partial',
     GALLERY : 'save-gallery-partial',
-    GALLERY_UNAVAILABLE : 'save-gallery-unavailable-partial',
-    LOCALSTORAGE : 'save-localstorage-partial',
-    FILEDOWNLOAD : 'save-file-download-partial'
+//    GALLERY_UNAVAILABLE : 'save-gallery-unavailable-partial',
+//    LOCALSTORAGE : 'save-localstorage-partial',
+//    FILEDOWNLOAD : 'save-file-download-partial'
   };
 
   ns.SaveController = function (piskelController) {
@@ -67,15 +67,17 @@
   };
 
   ns.SaveController.prototype.getPartials_ = function () {
-    if (pskl.utils.Environment.detectNodeWebkit()) {
-      return [PARTIALS.DESKTOP, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
-    }
+    // if (pskl.utils.Environment.detectNodeWebkit()) {
+    //   return [PARTIALS.DESKTOP, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
+    // }
 
-    if (pskl.app.isLoggedIn()) {
-      return [PARTIALS.GALLERY, PARTIALS.LOCALSTORAGE, PARTIALS.FILEDOWNLOAD];
-    }
+    // if (pskl.app.isLoggedIn()) {
+    //   return [PARTIALS.GALLERY, PARTIALS.LOCALSTORAGE, PARTIALS.FILEDOWNLOAD];
+    // }
 
-    return [PARTIALS.FILEDOWNLOAD, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
+    // return [PARTIALS.FILEDOWNLOAD, PARTIALS.LOCALSTORAGE, PARTIALS.GALLERY_UNAVAILABLE];
+    return [PARTIALS.GALLERY];
+
   };
 
   ns.SaveController.prototype.updateDescriptorInputs_ = function (evt) {

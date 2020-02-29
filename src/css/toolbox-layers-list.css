@@ -2,11 +2,11 @@
 /**
  * Layers container
  */
-.layers-list-container {
+/* .layers-list-container {
   min-height: 85px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 /**
  * Layers title and toggle preview
@@ -52,10 +52,10 @@
  * Layers list
  */
 
-.layers-list {
+/* .layers-list {
   font-size : 12px;
   overflow: auto;
-}
+} */
 
 .layer-item {
   position: relative;

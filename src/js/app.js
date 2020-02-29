@@ -23,7 +23,7 @@
 
       var size = pskl.UserSettings.get(pskl.UserSettings.DEFAULT_SIZE);
       var fps = Constants.DEFAULT.FPS;
-      var descriptor = new pskl.model.piskel.Descriptor('New Piskel', '');
+      var descriptor = new pskl.model.piskel.Descriptor('New Image', '');
       var piskel = new pskl.model.Piskel(size.width, size.height, fps, descriptor);
 
       var layer = new pskl.model.Layer('Layer 1');
@@ -84,8 +84,8 @@
         document.querySelector('#preview-list-wrapper'));
       this.framesListController.init();
 
-      this.layersListController = new pskl.controller.LayersListController(this.piskelController);
-      this.layersListController.init();
+      // this.layersListController = new pskl.controller.LayersListController(this.piskelController);
+      // this.layersListController.init();
 
       this.settingsController = new pskl.controller.settings.SettingsController(this.piskelController);
       this.settingsController.init();
